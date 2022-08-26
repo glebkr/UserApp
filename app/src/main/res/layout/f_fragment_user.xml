@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.UserFragment">
+
+        <LinearLayout
+            android:id="@+id/userTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:backgroundTint="@android:color/white"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:backgroundTint="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/ListValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:singleLine="true"
+                    android:text="@string/surname"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    style="@style/ListValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:singleLine="true"
+                    android:text="@string/name"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    style="@style/ListValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="2.3"
+                    android:singleLine="true"
+                    android:text="@string/secondName"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    style="@style/ListValue"
+                    android:layout_width="1dp"
+                    android:layout_weight="1.5"
+                    android:singleLine="true"
+                    android:text="@string/age"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    style="@style/ListValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="@string/height"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userRv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userTitle" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:tint="@android:color/white"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_add"
+            android:backgroundTint="#4C9AD8"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

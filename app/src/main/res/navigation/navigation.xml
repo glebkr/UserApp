@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.main.MainFragment"
+        android:label="Главное окно"
+        tools:layout="@layout/f_fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.myapplication.main.SettingsFragment"
+        android:label="Настройки"/>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.myapplication.main.UserFragment"
+        android:label="Список пользователей"
+        tools:layout="@layout/f_fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="com.example.myapplication.main.AddUserFragment"
+        android:label="Добавить пользователя"
+        tools:layout="@layout/f_fragment_add_user" >
+        <action
+            android:id="@+id/action_addUserFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+</navigation>
