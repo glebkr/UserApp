@@ -26,4 +26,20 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             repository.addUser(user)
         }
     }
+
+    fun deleteUser(user: UserEntity) {
+        viewModelScope.launch {
+            repository.deleteUser(user)
+        }
+    }
+    /*
+    fun replaceUser(fromPosition: Int, toPosition: Int, user: UserEntity) {
+        viewModelScope.launch {
+            repository.replaceUser(fromPosition, toPosition, user)
+        }
+    }
+
+     */
+
+
 }

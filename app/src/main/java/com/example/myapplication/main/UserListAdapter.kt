@@ -10,8 +10,8 @@ import com.example.myapplication.R
 import com.example.myapplication.room.UserEntity
 import kotlinx.android.synthetic.main.i_user_item.view.*
 
-class UserListAdapter(private val context: Activity) : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
-    private var userList = emptyList<UserEntity>()
+class UserListAdapter(private val context: Activity, private val listener: ISelectUser) : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
+    private var userList = mutableListOf<UserEntity>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -28,6 +28,9 @@ class UserListAdapter(private val context: Activity) : RecyclerView.Adapter<User
         holder.itemView.secondNameTv.text = curItem.secondName
         holder.itemView.ageTv.text = curItem.age.toString()
         holder.itemView.heightTv.text = curItem.height.toString()
+        holder.itemView.setOnClickListener {
+            listener.selectUser(curItem)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -35,7 +38,15 @@ class UserListAdapter(private val context: Activity) : RecyclerView.Adapter<User
     }
 
     fun setData(users: List<UserEntity>) {
-        this.userList = users
+        this.userList = users.toMutableList()
         notifyDataSetChanged()
+    }
+
+    fun addUser(position: Int, user: UserEntity) {
+        this.userList.add(position, user)
+    }
+
+    fun removeUser(position: Int) : UserEntity {
+        return this.userList.removeAt(position)
     }
 }

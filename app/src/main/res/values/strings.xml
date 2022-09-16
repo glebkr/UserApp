@@ -25,4 +25,6 @@
     <string name="age">Возраст</string>
     <string name="height">Рост</string>
     <string name="add_user">Добавить пользователя</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

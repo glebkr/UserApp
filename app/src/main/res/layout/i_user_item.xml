@@ -8,23 +8,20 @@
 
     <TextView
         android:id="@+id/surnameTv"
-        android:layout_width="0dp"
-        android:layout_weight="1.7"
+        android:layout_width="95dp"
         style="@style/ListValue"
         android:text="@string/surname" />
 
     <TextView
         android:id="@+id/nameTv"
         style="@style/ListValue"
-        android:layout_width="0dp"
-        android:layout_weight="1.5"
+        android:layout_width="60dp"
         android:text="@string/name"/>
 
     <TextView
         android:id="@+id/secondNameTv"
         style="@style/ListValue"
-        android:layout_width="0dp"
-        android:layout_weight="2.3"
+        android:layout_width="115dp"
         android:text="@string/secondName"
         />
 
@@ -32,14 +29,12 @@
         android:id="@+id/ageTv"
         style="@style/ListValue"
         android:text="@string/age"
-        android:layout_width="0dp"
-        android:layout_weight="1.5" />
+        android:layout_width="70dp" />
 
     <TextView
         android:id="@+id/heightTv"
         style="@style/ListValue"
         android:text="@string/height"
-        android:layout_width="0dp"
-        android:layout_weight="1" />
+        android:layout_width="60dp" />
 
 </LinearLayout>
